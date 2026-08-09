@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Stock & Payment Manager - Vyapar Ledger & Stock Terminal</title>
+    <!-- Progressive Web App Meta Tags -->
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2652/2652234.png" type="image/png" />
+    
+     <script>
+      (function() {
+        try {
+          if (typeof window !== 'undefined' && typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+              try {
+                var isTopFrame = false;
+                try {
+                  isTopFrame = (window.self === window.top);
+                } catch (e) {
+                  isTopFrame = false;
+                }
+
+                if (isTopFrame) {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(reg) {
+                      console.log('Vyapar Service Worker registered successfully:', reg.scope);
+                    })
+                    .catch(function(err) {
+                      console.warn('Service Worker registration skipped or failed:', err);
+                    });
+                } else {
+                  console.log('Service Worker registration skipped in iframe sandbox context.');
+                }
+              } catch (innerErr) {
+                console.warn('Service worker check threw error:', innerErr);
+              }
+            });
+          }
+        } catch (outerErr) {
+          console.warn('Navigator ServiceWorker check is blocked or restricted:', outerErr);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

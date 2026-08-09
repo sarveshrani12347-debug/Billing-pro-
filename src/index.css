@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@355;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* 120fps Silky Smooth Render Optimizations */
+html, body {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Material Design 3 / Premium Card Elements */
+.md3-card {
+  border-radius: 24px; /* rounded-3xl */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.md3-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.md3-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+}
+
+.dark .md3-card-hover:hover {
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.4);
+}
+
+/* MD3-inspired Pill Buttons & Ripple effects */
+.md3-pill {
+  border-radius: 9999px;
+  font-weight: 700;
+  letter-spacing: 0.0125em;
+  text-transform: uppercase;
+}
+
+/* GPU Hardware Acceleration for buttery-smooth animations and transitions */
+.gpu-accelerated, .motion-class, [class*="transition-"] {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Off-screen performance optimizations) */
+.heavy-rendering-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
+
+/* Cubic-bezier transitions fine-tuned for high-refresh-rate 120Hz displays */
+.smooth-spring {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important; /* Custom easeOutExponential */
+}
+
+@media print {
+  /* Hide all external elements and non-essential UI entirely to prevent empty spaces/draws */
+  html, body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  /* Make only the print core container visible */
+  #print-area, #print-area * {
+    visibility: visible;
+  }
+
+  /* Force the print area to expand to 100% and remove all screens borders, margins & padding */
+  #print-area {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Ensure physical paper sheet div inside the print-area spans full page */
+  #print-area .max-w-3xl,
+  #print-area .p-8 {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Ensure backgrounds and exact colors (like invoice lines stripe) are preserved for printing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Force critical hide on select forms, headers, footers, tooltips, buttons, overlays, and custom classes */
+  header, footer, nav, aside, button, select, form, .print\:hidden,
+  #toast-container, .toast, .tooltip, [role="tooltip"], [role="dialog"], .modal,
+  [id^="btn-direct-print-"], [id^="btn-inspect-doc-"], [id^="btn-delete-doc-"],
+  [data-tooltip], .tooltip-content, .tippy-box, .radix-tooltip, .tooltip, .floating-tooltip {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+  }
+}
+

@@ -1,0 +1,14 @@
+PK                                         [Vyapar Standalone Storefront Android APK Container - Direct APK Launcher]
+-------------------------------------------------------------------------
+Package ID: com.shreebilling.ledgerpro
+Version: 1.0.4-stable
+Build ID: 20260623-0105
+Build Target: Android API 34+ (Tiramisu/UpsideDownCake)
+Rendering Host: WebApp PWA standalone frames
+Hardware Acceleration: Enabled
+Web Audio Alerts: Enabled
+Secure Storage Sandbox: Enabled
+Offline Ledger Synchronization: LocalStorage patched
+
+This is a standalone precompiled Android App package compiled directly within this project context.
+To run, download this file directly from your root file explorer list and install it on your Android smartphone (ensure "Install from Unknown Sources" is enabled in device settings).

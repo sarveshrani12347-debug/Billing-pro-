@@ -1,0 +1,6 @@
+{
+  "name": "Shree Billing Pro",
+  "description": "Premium Material Design 3 smart billing & management platform with intelligent opening flows, multi-modal billing parsing, global search, and shop shutter animations.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "email": "sarveshyadav8777@gmail.com",
+      "passwordHash": "pbkdf2_sarvesh",
+      "name": "Lead Enterprise Architect"
+    },
+    {
+      "email": "sarvesh@company.com",
+      "passwordHash": "pbkdf2_sarvesh",
+      "name": "Sarvesh Yadav"
+    }
+  ],
+  "godowns": [
+    {
+      "id": "GD-01",
+      "name": "Central Hub - Mumbai",
+      "location": "Navi Mumbai Port Logistics Zone",
+      "capacity": 20000
+    },
+    {
+      "id": "GD-02",
+      "name": "Transit Warehouse - Pune",
+      "location": "Chakan Industrial Estate Phase-II",
+      "capacity": 10000
+    },
+    {
+      "id": "GD-03",
+      "name": "Northern Yard - Delhi NCR",
+      "location": "Okhla Industrial Area Block-H",
+      "capacity": 15000
+    },
+    {
+      "id": "GD-04",
+      "name": "Port Logistics - Chennai",
+      "location": "Ennore Port Premium Yard",
+      "capacity": 25000
+    }
+  ],
+  "items": [],
+  "stockTransactions": [],
+  "payments": [],
+  "backupLogs": [],
+  "documents": [],
+  "notifications": [],
+  "ledgers": [],
+  "journalEntries": [],
+  "erpAuditLogs": []
+}
